@@ -1,79 +1,56 @@
 <script>
+  import Boton from "./Boton.svelte";
+  
   export let equipo = {};
 </script>
 
 <style>
+  .title {
+    font-weight: bold;
+  }
   .card {
+    background-color: #fdebc9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    padding: 25px;
-    margin: 15px;
-    transition-duration: 0.5s;
-    width: 300px;
-    transition-duration: 0.2s;
-    background-color: rgb(163, 162, 162);
-    border-style: dotted;
-    border-color: rgb(134, 134, 134);
-    border-width: 4px;
-    transition-duration: 0.2s;
+    transition: 0.3s;
+    padding: 10px;
+    margin: 10px;
   }
 
   .card:hover {
-    border-style: solid;
-    border-color: rgb(219, 143, 2);
-    box-shadow: 0px 19px 54px -30px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
   }
 
   input {
-    background-color: #b6b4b4;
-    border-color: rgb(91, 91, 91);
-    border-radius: 5px;
-    font-weight: bold;
-    border-style: none;
-    transition-duration: 0.2s;
+    background-color: inherit;
+    padding: 10px;
+    font-size: 14px;
+    color: black;
+    border: 0;
+    outline: none;
+    margin-left: 5px;
+    margin-bottom: 4px;
+    max-width: 140px;
   }
 
-  input:hover {
-    background-color: #c2c2c2;
-  }
-
+  /* input[type="number"] {
+    text-align: right;
+    width: 100px;
+  } */
   input:focus {
-    background-color: #e6e6e6;
-  }
-
-  input[type="number"] {
-    text-align: left;
-    width: 90px;
+    background-color: wheat;
   }
 
   input:required:invalid,
   input:focus:invalid {
-    background-color: rgb(255, 1, 39);
-  }
-
-   @media screen and (max-width: 700px) {
-     .card {
-       width: auto;
-     }
+    background-color: lightpink;
   }
 </style>
 
-<div class="card">
-  <br />
-  <input
-    bind:value={equipo.nombre}
-    placeholder="Nombre del equipo"
-    class="title" />
-  <br />
-  <input bind:value={equipo.pais} placeholder="País del equipo" class="title" />
-  <br />
-  <input
-    bind:value={equipo.socios}
-    type="number"
-    placeholder="Número de socios" />
-  <br />
-  <input
-    bind:value={equipo.titulos}
-    type="number"
-    placeholder="Número de títulos" />
+<div class="card" on:click>
+  <input bind:value={equipo.nombre} class="title" />
+  <input bind:value={equipo.pais} class="title" />
+  <input bind:value={equipo.socios} class="title" />
+  <input bind:value={equipo.titulos} class="title" />
   <slot />
 </div>

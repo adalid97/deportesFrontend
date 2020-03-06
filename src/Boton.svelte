@@ -1,14 +1,18 @@
 <script>
   import { onMount, getContext } from "svelte";
-  import { jsonData } from "./store.js";
-  export let tipo = "insertar";
-  export let coleccion = "equipos";
-  export let documento = {};
+  import { jsonData }            from "./store.js";
 
-  let handler = () => {};
+  export let tipo = "insertar"; // insertar, modificar, eliminar
+  export let coleccion = "equipos"; // articulos, clientes
+  export let documento = {};
+  
+ 
+  let handler = () => {};  
   let clases = "";
   let url = "";
-  const URL = getContext("URL");
+
+  const URL = getContext("URL"); 
+
   onMount(() => {
     switch (tipo) {
       case "insertar":
@@ -25,16 +29,14 @@
         break;
       default:
     }
+
     switch (coleccion) {
-      case "equipos":
-        url = URL.equipos;
-        break;
-      case "jugadores":
-        url = URL.jugadores;
-        break;
+      case "jugadors": url=URL.jugadores; break;
+      case "equipos": url=URL.equipos; break;
       default:
     }
   });
+
   function insertar() {
     if (
       Object.keys(documento).length > 1 &&
@@ -53,6 +55,7 @@
         .catch(err => ko());
     }
   }
+
   function modificar() {
     fetch(url + documento.nombre, {
       method: "PUT",
@@ -63,7 +66,8 @@
       .then(data => ok())
       .catch(err => ko());
   }
-  function eliminar() {
+
+ function eliminar() {
     fetch(url + documento.nombre, { method: "DELETE" })
       .then(res => res.json())
       .then(data => {
@@ -85,50 +89,73 @@
 <style>
   .btn {
     font-weight: bold;
-    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.2s linear;
-    border-style: none;
+    border-radius: 3px;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn:hover {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   }
 
   /* Botón para insertar */
   .btn-insertar {
-    color: #094101;
-    background-color: rgb(8, 180, 8);
+    border: 1px solid #13a600;
+    color: #13a600;
+    background-color: lightgreen;
+  }
+  .btn-insertar::before {
+    content: "✏️";
   }
   .btn-insertar::after {
     content: " Insertar";
   }
   .btn-insertar:hover {
-    background: #03d11e;
+    background: #c1ffc9;
   }
 
   /* Botón para modificar */
   .btn-modificar {
-    color: #000000;
-    background-color: rgb(255, 120, 1);
+    border: 1px solid #0085a6;
+    color: #0085a6;
+    background-color: lightblue;
   }
-
+  .btn-modificar::before {
+    content: "📝";
+  }
   .btn-modificar::after {
     content: " Modificar";
   }
   .btn-modificar:hover {
-    background: #ff9900;
+    background: #a8e7f5;
   }
 
   /* Botón para eliminar */
   .btn-eliminar {
-    color: #000000;
-    background-color: rgb(223, 14, 14);
+    border: 1px solid #ec0115;
+    color: #ec0115;
+    background-color: lightsalmon;
+  }
+  .btn-eliminar::before {
+    content: "❌";
   }
   .btn-eliminar::after {
     content: " Eliminar";
   }
   .btn-eliminar:hover {
-    background: #ff0800;
+    background: #ffc1bf;
   }
 
+  @media (max-width: 500px) {
+    .btn-insertar::after,
+    .btn-modificar::after,
+    .btn-eliminar::after {
+      content: none;
+    }
+  }
 </style>
 
 <button class={clases} on:click={handler} />
