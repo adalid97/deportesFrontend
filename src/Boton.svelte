@@ -2,7 +2,7 @@
   import { onMount, getContext } from "svelte";
   import { jsonData } from "./store.js";
   export let tipo = "insertar";
-  export let coleccion = "platos";
+  export let coleccion = "equipos";
   export let documento = {};
 
   let handler = () => {};
@@ -26,11 +26,11 @@
       default:
     }
     switch (coleccion) {
-      case "platos":
-        url = URL.platos;
+      case "equipos":
+        url = URL.equipos;
         break;
-      case "cocineros":
-        url = URL.cocineros;
+      case "jugadores":
+        url = URL.jugadores;
         break;
       default:
     }

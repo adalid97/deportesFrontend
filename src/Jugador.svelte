@@ -50,13 +50,7 @@
     background-color: rgb(255, 1, 39);
   }
 
-  @media screen and (max-width: 700px) {
-    .card {
-      width: auto;
-    }
-  }
-  
-</style>
+  @media screen and (max-width: 700px) {documento
 
 <div class="card">
   <br />
