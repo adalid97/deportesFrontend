@@ -9,7 +9,7 @@
   }
 
   nav {
-    background: #fdebc9;
+    background: #000000;
     padding: 8px;
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -69,8 +69,8 @@
     }
 
     .inicio::after,
-    .articulos::after,
-    .clientes::after {
+    .jugadores::after,
+    .equipos::after {
       display: inline-block;
       padding-left: 10px;
     }
@@ -78,11 +78,11 @@
     .inicio::after {
       content: "Inicio";
     }
-    .articulos::after {
-      content: "Artículos";
+    .jugadores::after {
+      content: "Jugadores";
     }
-    .clientes::after {
-      content: "Clientes";
+    .equipos::after {
+      content: "Equipos";
     }
   }
   /* PC */
@@ -105,17 +105,17 @@
   <ul class="menu">
     <li class="logo">
       <Link to="/">
-        <span class="inicio">🛒</span>
+        <span class="inicio">🏟</span>
       </Link>
     </li>
     <li class="item active">
       <Link to="/jugadores">
-        <span class="articulos">🎁</span>
+        <span class="jugadores">🏃</span>
       </Link>
     </li>
     <li class="item active">
       <Link to="/equipos">
-        <span class="clientes">👥</span>
+        <span class="equipos">🏆</span>
       </Link>
     </li>
   </ul>

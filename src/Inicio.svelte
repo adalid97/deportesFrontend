@@ -36,9 +36,9 @@
     font-weight: 700;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     font-family: sans-serif;
-    color: #3b4151;
+    color: white;
     border-radius: 4px;
-    background: #fdebc9;
+    background: black;
     min-width: 140px;
     padding: 10px;
   }
@@ -54,44 +54,39 @@
   }
 </style>
 
-<h1>Tienda Frontend</h1>
+<h1>Deportes Frontend</h1>
 <p>
   <small>
     <b>Progressive Web App (PWA)</b>
   </small>
 </p>
 <p>
-  <small>
-    Backend en
-    <a href="https://tiendabackend.herokuapp.com">
-      https://tiendabackend.herokuapp.com
-    </a>
-  </small>
+
 </p>
 <p>Esta SPA (Single Page Application) ofrece 3 opciones:</p>
 
 <div class="bloque">
   <Link to="/">
     <div class="resumen">
-      <span class="opcion">🛒 Inicio</span>
-      <span class="descripcion">Esta página de información.</span>
+      <span class="opcion">🏟 Inicio</span>
+      <span class="descripcion">Página de Inicio.</span>
     </div>
   </Link>
 
-  <Link to="/articulos">
+  <Link to="/equipos">
     <div class="resumen">
-      <span class="opcion">🎁 Artículos</span>
+      <span class="opcion">🏆 Equipos</span>
       <span class="descripcion">
-        Operaciones CRUD de artículos en una BD.
+        Operaciones CRUD de equipos en una BD.
       </span>
     </div>
   </Link>
 
-  <Link to="/clientes">
+  <Link to="/jugadores">
     <div class="resumen">
-      <span class="opcion">👥 Clientes</span>
+      <span class="opcion">🏃 Jugadores</span>
       <span class="descripcion">
-        Operaciones CRUD de clientes en una BD.
+        Operaciones CRUD de jugadores en una BD.
       </span>
     </div>
   </Link>
@@ -101,8 +96,8 @@
   <small>
     <b>
       Código fuente en
-      <a href="https://github.com/jamj2000/tiendafrontend">
-        https://github.com/jamj2000/tiendafrontend
+      <a href="https://github.com/adalid97/deportesFrontend">
+        https://github.com/adalid97/deportesFrontend
       </a>
     </b>
   </small>

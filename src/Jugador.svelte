@@ -7,7 +7,7 @@
     font-weight: bold;
   }
   .card {
-    background-color: #fdebc9;
+    background-color: #111010;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     transition: 0.3s;
@@ -23,7 +23,7 @@
     background-color: inherit;
     padding: 10px;
     font-size: 14px;
-    color: black;
+    color: white;
     border: 0;
     outline: none;
     margin-left: 5px;
@@ -36,7 +36,7 @@
     width: 100px;
   }
   input:focus {
-    background-color: wheat;
+    background-color: cornflowerblue;
   }
 
   input:required:invalid,
@@ -46,9 +46,9 @@
 </style>
 
 <div class="card">
-  <input bind:value={jugador.nombre} class="title" />
-  <input bind:value={jugador.apellidos} />
-  <input bind:value={jugador.edad} />
-  <input bind:value={jugador.equipo} />
+  <input bind:value={jugador.nombre} placeholder="Nombre" class="title" />
+  <input bind:value={jugador.apellidos} placeholder="Apellidos" class="title"/>
+  <input bind:value={jugador.edad} placeholder="Edad" type="number" max="99" min="0"/>
+  <input bind:value={jugador.equipo} placeholder="Equipo" class="title"/>
   <slot />
 </div>

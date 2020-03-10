@@ -13,7 +13,7 @@
 </script>
 
 <style>
-  @import url("https://fonts.googleapis.com/css?family=Aclonica");
+  @import url("https://fonts.googleapis.com/css?family=Roboto");
 
   :global(body) {
     margin: 0;
