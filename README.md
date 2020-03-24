@@ -1,6 +1,6 @@
 # FRONTEND (con Svelte) 
 
-https://github.com/adalid97/deportesFrontend
+https://deportes-frontend.now.sh/
 
 > **ESTE MINITUTORIAL ES UNA VERSIÓN RESUMIDA DEL FRONTEND DE ESTA APLICACIÓN**
 > 
